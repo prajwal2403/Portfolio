@@ -49,20 +49,20 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white relative">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto container-mobile py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand Section */}
-          <div className="md:col-span-2">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold gradient-text mb-4">
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-4">
                 Prajwal Khobragade
               </h3>
-              <p className="text-gray-300 text-lg mb-4">
+              <p className="text-gray-300 text-base sm:text-lg mb-2 sm:mb-4">
                 AI & Full-Stack Developer
               </p>
-              <p className="text-gray-400 leading-relaxed max-w-md">
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-md">
                 Passionate about building innovative AI-driven applications and full-stack solutions. 
                 Always eager to take on new challenges and contribute to meaningful projects.
               </p>
@@ -70,15 +70,15 @@ const Footer = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Connect With Me</h4>
+              <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 min-h-[44px] min-w-[44px]"
                     aria-label={link.name}
                   >
                     {link.icon}
@@ -89,14 +89,14 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+          <div className="sm:col-span-1">
+            <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group text-sm sm:text-base min-h-[44px] py-1"
                   >
                     <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
                     {link.name}
@@ -107,27 +107,27 @@ const Footer = () => {
           </div>
 
           {/* Contact & Resume */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Get In Touch</h4>
-            <div className="space-y-4">
+          <div className="sm:col-span-1">
+            <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Get In Touch</h4>
+            <div className="space-y-3 sm:space-y-4">
               <div>
-                <p className="text-gray-400 text-sm mb-2">Email</p>
+                <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">Email</p>
                 <a
-                  href="mailto:prajwal.khobragade@example.com"
-                  className="text-white hover:text-primary-400 transition-colors duration-200"
+                  href="mailto:prajwal.khobragade24@gmail.com"
+                  className="text-white hover:text-primary-400 transition-colors duration-200 text-sm sm:text-base break-all"
                 >
                   prajwal.khobragade24@gmail.com
                 </a>
               </div>
               <div>
-                <p className="text-gray-400 text-sm mb-2">Location</p>
-                <p className="text-white">Pune, Maharashtra, India</p>
+                <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">Location</p>
+                <p className="text-white text-sm sm:text-base">Pune, Maharashtra, India</p>
               </div>
-              <div className="pt-4">
+              <div className="pt-2 sm:pt-4">
                 <a
-                  href="resume/Prajwal Khobragade resume.pdf"
+                  href="/resume/Prajwal Khobragade resume.pdf"
                   download
-                  className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300"
+                  className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-3 sm:px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm sm:text-base min-h-[44px]"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-4-4m4 4l4-4m5-2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -142,29 +142,31 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="max-w-7xl mx-auto container-mobile py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
               <p>© {currentYear} Prajwal Khobragade. All rights reserved.</p>
-              <p className="mt-1">Built with React & Tailwind CSS</p>
+             
             </div>
 
-            <div className="flex items-center space-x-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
-              >
-                Terms of Service
-              </a>
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+              <div className="flex items-center space-x-4 sm:space-x-6">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200 min-h-[44px] py-2"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200 min-h-[44px] py-2"
+                >
+                  Terms of Service
+                </a>
+              </div>
               <button
                 onClick={scrollToTop}
-                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-1 text-sm"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-1 text-xs sm:text-sm min-h-[44px] py-2 px-2"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

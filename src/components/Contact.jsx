@@ -94,30 +94,30 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Get In Touch</h3>
+          <div className="order-2 lg:order-1">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Get In Touch</h3>
             
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {contactInfo.map((info, index) => (
                 <a
                   key={index}
                   href={info.link}
-                  className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group"
+                  className="flex items-center p-3 sm:p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group card-interactive"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-2xl mr-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-lg sm:text-2xl mr-3 sm:mr-4">
                     {info.icon}
                   </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
                       {info.title}
                     </h4>
-                    <p className="text-gray-600 text-sm mb-1">{info.description}</p>
-                    <p className="text-primary-600 font-medium">{info.value}</p>
+                    <p className="text-gray-600 text-xs sm:text-sm mb-1">{info.description}</p>
+                    <p className="text-primary-600 font-medium text-sm sm:text-base truncate">{info.value}</p>
                   </div>
-                  <div className="text-gray-400 group-hover:text-primary-600 transition-colors duration-200">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="text-gray-400 group-hover:text-primary-600 transition-colors duration-200 flex-shrink-0">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </div>
@@ -127,31 +127,30 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Follow Me</h4>
+              <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white text-gray-600 rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:text-primary-600 transition-all duration-300 transform hover:scale-110"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-white text-gray-600 rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:text-primary-600 transition-all duration-300 transform hover:scale-110 min-h-[44px] min-w-[44px]"
+                    aria-label={`Follow on ${social.name}`}
                   >
                     {social.icon}
                   </a>
                 ))}
               </div>
             </div>
-
-
           </div>
 
           {/* Contact Form */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send Me a Message</h3>
+          <div className="order-1 lg:order-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Send Me a Message</h3>
             
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name
@@ -163,7 +162,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-base"
                     placeholder="Your full name"
                   />
                 </div>
@@ -178,13 +177,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                   Subject
                 </label>
@@ -195,12 +194,12 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-base"
                   placeholder="What's this about?"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
@@ -210,8 +209,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="6"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                  rows="5"
+                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none text-base"
                   placeholder="Tell me about your project or opportunity..."
                 ></textarea>
               </div>
@@ -219,7 +218,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
+                className={`w-full py-3 px-4 sm:px-6 rounded-lg font-semibold text-white transition-all duration-300 min-h-[44px] text-base ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
                     : 'bg-primary-600 hover:bg-primary-700 transform hover:scale-105'
@@ -239,12 +238,12 @@ const Contact = () => {
               </button>
 
               {submitStatus === 'success' && (
-                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center gap-2 text-green-700">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <div className="mt-4 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center gap-2 text-green-700 text-sm sm:text-base">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Message sent successfully! I'll get back to you soon.
+                    <span>Message sent successfully! I'll get back to you soon.</span>
                   </div>
                 </div>
               )}
